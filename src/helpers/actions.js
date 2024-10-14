@@ -1,6 +1,7 @@
 'use server'
 
 import axios from 'axios';
+import { revalidatePath } from 'next/cache';
 import {redirect} from 'next/navigation';
 
 export async function counterTrigger() {
@@ -70,6 +71,8 @@ export async function editEmployee (formState, data) {
         return {message: error.message};
     }
 
+    // next disable caching for employee page
+    revalidatePath(`/employees/${data.id}`);
     redirect('/');
 }
 
