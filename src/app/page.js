@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import {headers, cookies} from 'next/headers';
 
 import Counter from '@/components/counter';
 
@@ -11,9 +12,7 @@ import Counter from '@/components/counter';
 // export const revalidate = 0;
 
 async function getEmployees () {
-	const res = await fetch('http://localhost:3004/employees', {
-		next: {revalidate: 0}
-	})
+	const res = await fetch('http://localhost:3004/employees')
 
 	if(!res.ok) {
 		throw new Error('Oops, no employees')
@@ -23,7 +22,19 @@ async function getEmployees () {
 }
 
 export default async function Home() {
-	// await new Promise((resolve) => setTimeout(resolve, 3000));
+	// const authHeader = headers().get('auth');
+	// const authHeader = headers().entries();
+	// const authHeader = headers().forEach();
+	// const authHeader = headers().has('Content-Type');
+	// const authHeader = headers().keys();
+	// const authHeader = headers().values();
+
+	// const cookiesStore = cookies().get('someCookie');
+	// const cookiesStore = cookies().getAll().map((cookie) => {});
+	// const cookiesStore = cookies().has('whatever');
+
+	// cookies().set('name', 'value', {secure: true});
+	// cookies().delete('name')
 
 	const employees = await getEmployees();
 	const showEmployees = employees.map(employee => (
