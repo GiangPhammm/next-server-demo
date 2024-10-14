@@ -2,6 +2,14 @@ import Link from 'next/link'
 
 import Counter from '@/components/counter';
 
+// force-dynamic is not working on next 14.2.15
+// https://github.com/vercel/next.js/issues/65170
+// export const dynamic = 'force-dynamic';
+
+// Take amount of time to fetch dynamic request
+// If revalidate = 5, it means after 5s it does the fetching, before 5s use cache
+export const revalidate = 0;
+
 async function getEmployees () {
 	const res = await fetch('http://localhost:3004/employees');
 
@@ -13,7 +21,7 @@ async function getEmployees () {
 }
 
 export default async function Home() {
-	await new Promise((resolve) => setTimeout(resolve, 3000));
+	// await new Promise((resolve) => setTimeout(resolve, 3000));
 
 	const employees = await getEmployees();
 	const showEmployees = employees.map(employee => (
