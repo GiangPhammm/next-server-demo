@@ -9,7 +9,7 @@ import Counter from '@/components/counter';
 
 // Take amount of time to fetch dynamic request
 // If revalidate = 5, it means after 5s it does the fetching, before 5s use cache
-// export const revalidate = 0;
+export const revalidate = 0;
 
 async function getEmployees () {
 	const res = await fetch('http://localhost:3004/employees')
