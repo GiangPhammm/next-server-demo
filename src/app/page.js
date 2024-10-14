@@ -11,7 +11,9 @@ import Counter from '@/components/counter';
 // export const revalidate = 0;
 
 async function getEmployees () {
-	const res = await fetch('http://localhost:3004/employees');
+	const res = await fetch('http://localhost:3004/employees', {
+		next: {revalidate: 0}
+	})
 
 	if(!res.ok) {
 		throw new Error('Oops, no employees')
