@@ -8,6 +8,7 @@ export default function Header () {
                 <Link href='/' className='me-3 py-2 link-body-emphasis text-decoration-none'>Home</Link>
                 <Link href='/form/add' className='me-3 py-2 link-body-emphasis text-decoration-none'>Add Employee</Link>
                 <Link href='/about-us' className='me-3 py-2 link-body-emphasis text-decoration-none'>About Us</Link>
+                <Link href='/testing' className='me-3 py-2 link-body-emphasis text-decoration-none'>Testing</Link>
             </nav>
         </div>
     )
