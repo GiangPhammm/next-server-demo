@@ -1,4 +1,4 @@
-export async function GET (request, {params}) {
+export async function PATCH (request, {params}) {
     const data = await request.json();
     const res = await fetch(`http://localhost:3004/employees/${params.id}`, {
         method: 'PATCH',
