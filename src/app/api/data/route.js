@@ -13,7 +13,7 @@ export async function GET (request) {
 
     const employees = await res.json();
 
-    return Response.json (employees, {
+    return Response.json(employees, {
         status: 200,
         headers: {
             'Set-Cookie': 'token=Bearer kjjfdjdfjkjkfdljhdfd'
