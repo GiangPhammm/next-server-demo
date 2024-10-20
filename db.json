@@ -22,25 +22,31 @@
       "id": "4",
       "fullname": "Steve Mils",
       "position": "Manager",
-      "age": "55"
+      "age": 55
     },
     {
       "id": "5",
       "fullname": "Mark Knopfler",
       "position": "Soldier",
-      "age": "55"
+      "age": 55
     },
     {
       "id": "6",
       "fullname": "Yarn Son",
       "position": "Common Employee",
-      "age": "21"
+      "age": 21
     },
     {
       "id": "7",
       "fullname": "Lisa Simpson",
       "position": "Manager",
-      "age": "26"
+      "age": 26
+    },
+    {
+      "id": "8",
+      "fullname": "Francis Miles",
+      "position": "Manager",
+      "age": 30
     }
   ]
 }
